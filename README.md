@@ -6,7 +6,7 @@ This ROS project serves as a minimal reproducible test case for a bug.
 The bug occurs when all of the following conditions exist:
 * Subscribe done with udp().tcpNoDelay(true)
 * A Latched message waiting at subscribe time
-* Process set at SCHED_FIFO
+* Process priority set at SCHED_FIFO
 * Single core available
 
 If this happens, then one of the threads (not the thread that did the subscribing) gets stuck at 100% CPU and there appears
