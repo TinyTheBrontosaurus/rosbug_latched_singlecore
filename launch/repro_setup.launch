@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="rosbag" type="play" name="player" output="screen" args="-q -k repro_bag.bag"/>
+</launch>

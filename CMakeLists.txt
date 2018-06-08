@@ -149,6 +149,22 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+add_executable(repro
+        src/repro.cpp)
+
+target_link_libraries(repro
+        ${catkin_LIBRARIES}
+        ${shared_interfaces_LIBRARIES}
+        )
+
+# Set the install locations for the executable
+install(TARGETS repro
+        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
+
+
 #############
 ## Install ##
 #############
