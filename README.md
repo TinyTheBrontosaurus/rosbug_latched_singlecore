@@ -38,8 +38,8 @@ rosrun latched_singlecore repro_run.sh
 
 
 ### Observed Behavior
-Once run, you will notice in the `top` window that CPU for `repro` is pegged at 100%. Simply press `<enter>` in this
-terminal to kill the process. This command can be run repeatedly without resetting the other terminals.
+Once run, you will notice in the `top` window that CPU for `repro` is pegged at 100%. Simply press `<enter>` in the
+third terminal to kill the process. This command can be run repeatedly without resetting the other terminals.
 
 
 ### Expected behavior
@@ -72,5 +72,17 @@ goes away if the line `hints.udp().tcpNoDelay(true);` is removed from `repro.cpp
 
 
 ## Environment
-ROS Kinetic
-Ubuntu 16.04
+* ROS Kinetic
+* Ubuntu 16.04
+
+
+## Appendix: Very Basic ROS Setup
+This assumes a ROS workspace is setup, but can be setup using the following steps
+
+```
+mkdir -p ros_workspace/src
+cd ros_workspace/src
+git clone <this repo>
+cd ..
+catkin build
+```
